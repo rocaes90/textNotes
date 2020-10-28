@@ -6,8 +6,6 @@ import List from './note-list'
 import useStyles from './layout.styles'
 import useLayout from './layout-hook'
 
-import { ActiveNoteProvider } from 'context/activeNote'
-
 interface IProps { 
   children: ReactElement
 }

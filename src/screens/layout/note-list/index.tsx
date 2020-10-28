@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react'
+import React, { memo } from 'react'
 
 import { Box, Button, Typography } from '@material-ui/core'
 import { Add } from '@material-ui/icons'

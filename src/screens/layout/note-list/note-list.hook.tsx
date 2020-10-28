@@ -20,7 +20,7 @@ function useNoteList(): IType {
       const updatedContext = {...context, selectedNote: item, currentText: item.text }
       setContext(updatedContext) 
     }, 
-    [context]
+    [context, setContext]
   )
 
   const onClickDelete = useCallback(
@@ -36,7 +36,7 @@ function useNoteList(): IType {
       setContext(updatedContext) 
 
     }, 
-    [context]
+    [context, setContext]
   )
 
   const onClickAdd = useCallback(
@@ -45,7 +45,7 @@ function useNoteList(): IType {
       const updatedContext = {...context, selectedNote: null, currentText: '' }
       setContext(updatedContext) 
     }, 
-    [context]
+    [context, setContext]
   )
 
   return {

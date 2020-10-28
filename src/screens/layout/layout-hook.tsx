@@ -1,6 +1,6 @@
-import { useCallback, useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
-import { INote, IAppContext } from 'types'
+import { INote } from 'types'
 
 import ActiveNoteContext from 'context/activeNote'
 

@@ -18,7 +18,6 @@ function useHome(): IType {
   const [currentText, setCurrentText] = useState('')
 
   const contextMaintenanceNotes = function() {
-    const { notes, currentText, selectedNote } = context
     return (maintainerFunction: any) => {
       const updatedContext = maintainerFunction(context)
       setContext(updatedContext) 
@@ -26,7 +25,7 @@ function useHome(): IType {
     }
   }
 
-  const updateNote = ({notes, currentText, selectedNote}: IAppContext) => {
+  const updateNote = useCallback(({notes, currentText, selectedNote}: IAppContext) => {
     const noteIndexToUpdate = notes.findIndex((note: INote) => note.id === selectedNote.id)
     notes[noteIndexToUpdate].text = currentText
     return { 
@@ -35,27 +34,27 @@ function useHome(): IType {
       currentText: '',
       selectedNote: null,
     }
-  }
+  }, [context])
 
-  const addNote = ({notes, currentText, selectedNote}: IAppContext) => {
+  const addNote = useCallback(({notes, currentText, selectedNote}: IAppContext) => {
     return{ 
       ...context, 
       notes: [...notes].concat({ id: notes.length + 1, text: currentText }),
       currentText: ''
     }
-  }
+  }, [context])
 
   const maintenanceNotes = contextMaintenanceNotes()
 
   const onChangeText = useCallback(
     (event: ChangeEvent<any>): void => {
 
-      const { name, value } = event.target
+      const { value } = event.target
 
       const updatedContext = { ...context, ...{currentText: value}}
       setContext(updatedContext) 
     }, 
-    [context]
+    [context, setContext]
   )
 
   const onClickSave = useCallback(
@@ -67,7 +66,7 @@ function useHome(): IType {
         maintenanceNotes(addNote)
       }
     },
-    [context]
+    [context, addNote, updateNote, maintenanceNotes]
   )
 
   const onKeyPressed = useCallback(
@@ -83,7 +82,7 @@ function useHome(): IType {
         }
       }
     }, 
-    [context] 
+    [context, addNote, updateNote, maintenanceNotes]
   )
 
   useEffect(() => {
