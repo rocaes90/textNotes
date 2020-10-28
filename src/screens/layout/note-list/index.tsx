@@ -18,8 +18,6 @@ function NoteList({notesToDisplay}: IProps) {
 
   const { onClickEdit, onClickDelete, onClickAdd } = useNoteList()
 
-  console.log('notes to display', notesToDisplay)
-
   return (
     <Box className={classes.listContainer}>
       <Button

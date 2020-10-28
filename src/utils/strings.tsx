@@ -10,4 +10,5 @@ function excerpt(
   return result
 }
 
+// eslint-disable-next-line
 export default { excerpt }

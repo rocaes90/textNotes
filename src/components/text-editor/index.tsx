@@ -7,6 +7,7 @@ import useStyles from './text-editor.styles'
 
 interface IProps {
   currentText: string
+
   onChangeText(event: ChangeEvent<any>): void
   onClickSave(): void
   onKeyPressed(event: KeyboardEvent<HTMLDivElement>): void
@@ -20,7 +21,7 @@ function Editor({currentText, onChangeText, onClickSave, onKeyPressed}: IProps) 
       <TextField
         id="editor"
         multiline
-        rows={30}
+        rows={20}
         variant="outlined"
         fullWidth
         value={currentText}

@@ -16,7 +16,7 @@ function Layout({ children }: IProps) {
   const { notesToDisplay } = useLayout()
 
   return (
-    <Box className={classes.layoutContainer}>
+    <Box className={classes.layoutContainer} flexDirection={{ xs: 'column', md: 'row' }}>
       <Box className={classes.noteListContainer}>
         <List 
           notesToDisplay={notesToDisplay}

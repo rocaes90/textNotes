@@ -10,10 +10,20 @@ const useStyles = makeStyles(
     },
     noteListContainer: {
       backgroundColor: Colors.background,
-      width: '40%'
+      [theme.breakpoints.down('sm')]: {
+        width: 'auto'
+      },
+      [theme.breakpoints.up('md')]: {
+        width: '40%'
+      },
     },
     layoutContent: {
-      width: '60%'
+      [theme.breakpoints.down('sm')]: {
+        width: 'auto'
+      },
+      [theme.breakpoints.up('md')]: {
+        width: '60%'
+      },
     }
   }),
 )

@@ -13,14 +13,17 @@ function Home() {
 
   const { currentText, onChangeText, onClickSave, onKeyPressed } = useHome()
 
-  // const activeNote = content.activeNote ? content.activeNote.content : ''
-
   return (
     <Box className={classes.homeContainer}>
       <Layout>
         <Box className={classes.homeContent}>
-          <TextEditor currentText={currentText} onChangeText={onChangeText} onClickSave={onClickSave} onKeyPressed={onKeyPressed} />
-        </Box>
+          <TextEditor 
+            currentText={currentText} 
+            onChangeText={onChangeText} 
+            onClickSave={onClickSave} 
+            onKeyPressed={onKeyPressed} 
+          />
+        </Box> 
       </Layout>
     </Box>
   )

@@ -12,6 +12,12 @@ const useStyles = makeStyles(
       backgroundColor: Colors.stormGray,
       color: Colors.white
     },
+    enterToSaveLabel: {
+      color: Colors.black
+    },
+    enterToSaveToggle: {
+      color: Colors.athensGray
+    },
   }),
 )
 

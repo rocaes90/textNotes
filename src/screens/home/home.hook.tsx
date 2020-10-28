@@ -6,6 +6,7 @@ import ActiveNoteContext from 'context/activeNote'
 
 interface IType {
   currentText: string,
+
   onChangeText(event: ChangeEvent<any>): void
   onClickSave(): void
   onKeyPressed(event: KeyboardEvent<HTMLDivElement>): void
@@ -71,7 +72,6 @@ function useHome(): IType {
 
   const onKeyPressed = useCallback(
     (event: KeyboardEvent): void => {
-      console.log('keypress', event.key)
       if (event.key === 'Enter') {
         event.preventDefault()
         const { selectedNote } = context
@@ -86,8 +86,8 @@ function useHome(): IType {
   )
 
   useEffect(() => {
-    const activeNote = context.currentText ? context.currentText : ''
-    setCurrentText(activeNote)
+    const activeText = context.currentText ? context.currentText : ''
+    setCurrentText(activeText)
   }, [context])
 
   return { 
