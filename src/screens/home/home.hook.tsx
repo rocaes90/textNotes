@@ -38,9 +38,11 @@ function useHome(): IType {
   }, [context])
 
   const addNote = useCallback(({notes, currentText, selectedNote}: IAppContext) => {
+    const lastId = notes.length && notes.slice(-1)[0]['id']
+
     return{ 
       ...context, 
-      notes: [...notes].concat({ id: notes.length + 1, text: currentText }),
+      notes: [...notes].concat({ id: lastId + 1, text: currentText }),
       currentText: ''
     }
   }, [context])
