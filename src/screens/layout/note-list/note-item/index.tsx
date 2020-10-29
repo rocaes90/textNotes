@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react'
 
-import { Box, Typography } from '@material-ui/core'
+import { Box, Button } from '@material-ui/core'
 import { Edit, Delete } from '@material-ui/icons'
 
 import { INote } from 'types'
@@ -35,13 +35,23 @@ function NoteItem({note, onClickEdit, onClickDelete}: IProps) {
         {stringUtils.excerpt(text, 100)}
       </Box>
       <Box className={classes.options} mr={2}>
-        <Box className={classes.optionContainer} onClick={onClickEditCallback}>
-          <Edit className={classes.icon} color="inherit" fontSize="small" />
-          <Typography>Edit</Typography>
+        <Box className={classes.optionContainer}>
+          <Button
+            onClick={onClickEditCallback}
+            className={classes.optionButton}
+            startIcon={<Edit className={classes.icon} color="inherit" fontSize="small" />}
+          >
+            Edit
+          </Button>
         </Box>
-        <Box className={classes.optionContainer} onClick={onClickDeleteCallback}>
-          <Delete className={classes.icon} color="inherit" fontSize="small" />
-          <Typography>Delete</Typography>
+        <Box className={classes.optionContainer} >
+          <Button
+            onClick={onClickDeleteCallback}
+            className={classes.optionButton}
+            startIcon={<Delete className={classes.icon} color="inherit" fontSize="small" />}
+          >
+            Delete
+          </Button>
         </Box>
       </Box>
     </Box>

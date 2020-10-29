@@ -26,8 +26,8 @@ function useNoteList(): IType {
       const { notes } = context
       const filteredNotes = notes.filter((note: INote) => note.id !== id)
       const updatedContext = {...context, notes: filteredNotes }
+      localStorage.setItem('notes', JSON.stringify(updatedContext))
       setContext(updatedContext) 
-
     }, 
     [context, setContext]
   )

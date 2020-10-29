@@ -1,5 +1,7 @@
 import { makeStyles, StyleRules, Theme } from '@material-ui/core'
 
+import { Colors } from 'config'
+
 const useStyles = makeStyles(
   (theme: Theme): StyleRules => ({
     itemContainer: {
@@ -24,6 +26,9 @@ const useStyles = makeStyles(
       marginRight: theme.spacing(0.5),
       marginBottom: theme.spacing(1),
       cursor: 'pointer'
+    },
+    optionButton: {
+      color: Colors.white
     },
     icon: {
       marginRight: theme.spacing(1)

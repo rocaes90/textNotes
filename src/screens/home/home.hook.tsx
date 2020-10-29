@@ -74,10 +74,10 @@ function useHome(): IType {
     (event: KeyboardEvent): void => {
       if (event.key === 'Enter') {
         event.preventDefault()
-        const { selectedNote } = context
+        const { selectedNote, currentText } = context
         if (selectedNote) {
           maintenanceNotes(updateNote)
-        } else {
+        } else if(currentText) {
           maintenanceNotes(addNote)
         }
       }

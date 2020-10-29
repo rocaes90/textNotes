@@ -5,7 +5,10 @@ const useStyles = makeStyles(
     homeContainer: {
       display: 'flex',
       width: '100%',
-      height: '100vh'
+      height: '100vh',
+      [theme.breakpoints.up('md')]: {
+        overflow: 'hidden',
+      }
     },
     homeContent: {
       display: 'flex'

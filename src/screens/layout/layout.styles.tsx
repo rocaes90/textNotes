@@ -14,6 +14,7 @@ const useStyles = makeStyles(
         width: 'auto'
       },
       [theme.breakpoints.up('md')]: {
+        overflow: 'auto',
         width: '40%'
       },
     },
